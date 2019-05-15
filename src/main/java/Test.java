@@ -1,13 +1,13 @@
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.flipkart.zjsonpatch.JsonDiff;
-import com.flipkart.zjsonpatch.JsonPatch;
 
 import java.io.FileInputStream;
-import java.io.PrintStream;
+import java.io.IOException;
 import java.util.Scanner;
 
-public class Main {
+public class Test {
+
     public static void main(String[] args) throws Exception {
         ObjectMapper mapper = new ObjectMapper();
 
@@ -24,14 +24,6 @@ public class Main {
             jsonString += sc.nextLine();
         JsonNode target = mapper.readTree(jsonString);
 
-        PrintStream out = new PrintStream("patch.json");
-        // Получение патча
-        JsonNode patch = JsonDiff.asJson(source, target);
-        out.print(patch);
-
-        // Применение патча
-        JsonNode sourseWithPatch = JsonPatch.apply(patch, source);
-         out = new PrintStream("sourseWithPatch.json");
-        out.print(sourseWithPatch);
+        System.out.println(Utils.getJsonPatch(source, target));
     }
 }

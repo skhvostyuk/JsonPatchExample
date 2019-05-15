@@ -29,8 +29,8 @@
 			"maxApprovedPaymentAmount":100.0
 		},
 		"scoring":null,
-		"creditRequestHistoryList":[],
 		"creditRequestReworkList":[],
+		"creditRequestHistoryList":[],
 		"purchase":
 		{
 			"id":"f2697cd4-e3c2-4e85-a367-90c2ee4fcaa7",
